@@ -1,0 +1,36 @@
+cd /D
+
+mkdir Demo
+
+cd Demo
+
+git init
+
+vim index.html
+
+git add .
+
+git commit -m "First Commit"
+
+git branch -M master main // git branch -M main
+
+git remote add origin url
+
+git push origin main
+
+#go to Render
+
+create static website
+
+github publuc url paste>>connect>>deploy
+
+click url
+
+go to settings in Render>>webhook link copy
+
+github>>settings>>add webhook>>paste url>>json
+
+Done
+
+
+ 
