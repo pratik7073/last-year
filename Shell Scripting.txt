@@ -1,0 +1,136 @@
+Que 1)Display Content of file?
+
+cat index.html
+
+
+Que 2)Accept filename and display contents?
+
+echo "enter file name"
+read fname
+cat $fname
+
+Que 3)Accept filename & Copy content to another file? 
+
+echo "Enter filename"
+read fname
+cp $fname tempdata
+cat tempdata
+
+
+Que 4)
+
+&&&&&&&&&&&&&&&&&&   Accept fname & nol from user and display top n lines from file to filecopy.txt?
+
+Que 5)
+
+echo "Enter file name &  number of lines to copy"
+read fname
+read nlines
+cat $fname|head -n$nlines > filecopy3.txt
+
+
+echo "Enter filename"
+read fname
+echo "Enter no of lines"
+read no
+cat $fname| head -n $no>filecopy4.txt
+
+
+Que 6)Count number of files and directories?
+
+echo "number of files"
+find . -type  f |wc -l
+echo "number of directories"
+find . -type d | wc -l
+
+ls -l|wc -l
+
+
+Que 7)Accept extension and count no of files
+
+echo "Enter file extension"
+read extension
+find . -name "*.$extension"|wc -l
+
+
+Que 8)No of files and directory in current directory
+
+echo "No of files"
+find . -type f|wc -l
+echo "no of directories"
+find . -type d|wc -l
+
+
+Que 9) Accept no and Print table?
+
+echo "Enter the number"
+read no
+echo "Table of" $no
+i=1
+while [ $i -le 10 ]
+do
+ m=$((i*no))
+ i=$((i+1))
+ echo $m
+done
+
+
+
+Que 10)Print no from 15 to 20 using for loop
+
+i=15
+for i in $(seq 15 20)
+do
+ echo $i
+done
+
+i=15
+for i in range 15 16 17 18 19 20
+do
+ echo $i
+done
+
+
+Que 11)Print 1 to 5 using until loop
+
+
+i=1
+until [ $i -gt 5 ]
+do
+ echo $i
+ i=$((i+1))
+done
+
+
+
+Que 12)Print first 10 odd numbers using until loop?
+
+
+i=1
+cnt=0
+until [ $cnt -eq 10 ]
+do
+ $((i+=2))
+ $((cnt++))
+ echo $i
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

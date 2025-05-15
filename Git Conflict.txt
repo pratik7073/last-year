@@ -1,0 +1,109 @@
+
+$ cd /D
+
+$ mkdir App1
+
+$ cd App1
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1
+$ git init
+Initialized empty Git repository in D:/App1/.git/
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ vim index.html
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ git add .
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the ne
+xt time Git touches it
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ git commit -m "First Change"
+[master (root-commit) 6239336] First Change
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ git checkout -b Dev1
+Switched to a new branch 'Dev1'
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev1)
+$ vim index.html
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev1)
+$ git add .
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the ne
+xt time Git touches it
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev1)
+$ git commit -m "Change by dev1"
+[Dev1 e123099] Change by dev1
+ 1 file changed, 1 insertion(+)
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev1)
+$ git log
+commit e1230996a18a71d414a95b506320d5f3b41383b3 (HEAD -> Dev1)
+Author: Pratik7073 <pratikthi@gail.com>
+Date:   Thu May 15 12:22:28 2025 +0530
+
+    Change by dev1
+
+commit 62393365a846872ee7a04a73313f603c4c3800c0 (master)
+Author: Pratik7073 <pratikthi@gail.com>
+Date:   Thu May 15 12:20:58 2025 +0530
+
+    First Change
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev1)
+$ git checkout master
+Switched to branch 'master'
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ git checkout -b Dev2
+Switched to a new branch 'Dev2'
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev2)
+$ vim index.html
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev2)
+$ git add .
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev2)
+$ git commit -m "Change by Dev2"
+[Dev2 3b21e11] Change by Dev2
+ 1 file changed, 1 insertion(+)
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (Dev2)
+$ git checkout master
+Switched to branch 'master'
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ git merge Dev1
+Updating 6239336..e123099
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ cat index.html
+This is App1
+This line is by Dev1
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$ git merge Dev2
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master|MERGING)
+$ vim index.html
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master|MERGING)
+$ git add .
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master|MERGING)
+$ git commit -m "Merge conflict resolve"
+[master 09b57bc] Merge conflict resolve
+
+hp@DESKTOP-K0FQSNP MINGW64 /D/App1 (master)
+$
