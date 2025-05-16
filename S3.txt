@@ -1,0 +1,18 @@
+bucket
+permissions
+block ip
+bucket policy edit
+copy arn
+edit (policy generator)
+s3 bucket
+action get object
+copy,copy/*
+get statement copy policy
+go back
+objects>>>static website hosting enable
+index.html
+save
+bucket 
+upload index.html
+close
+properties >>last url
